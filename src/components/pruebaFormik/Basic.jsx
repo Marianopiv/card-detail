@@ -1,6 +1,9 @@
 import React from "react";
 import { Formik } from "formik";
 import InputMask from "react-input-mask";
+import { verifyDisableCondition } from "../../helper/Helper";
+
+
 const Basic = ({ setData }) => {
   return (
     <div className="flex flex-col items-center md:p-10 text-sm font-mono font-bold">
@@ -54,7 +57,7 @@ const Basic = ({ setData }) => {
         }}
         onSubmit={(values, { setSubmitting }) => {
           setTimeout(() => {
-            /* alert(JSON.stringify(values, null, 2)); */
+            console.log(JSON.stringify(values, null, 2));
             setData(values);
             console.log(values);
             setSubmitting(false);
@@ -171,7 +174,7 @@ const Basic = ({ setData }) => {
             </div>
             <div className="">
               <button
-                className="w-64 bg-black text-white"
+                className={`w-64 ${verifyDisableCondition(errors,values)?"bg-black":"bg-gray-400 cursor-not-allowed"} text-white`}
                 type="submit"
                 disabled={isSubmitting}
               >
