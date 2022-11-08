@@ -176,7 +176,7 @@ const Basic = ({ setData }) => {
               <button
                 className={`w-64 ${verifyDisableCondition(errors,values)?"bg-black":"bg-gray-400 cursor-not-allowed"} text-white`}
                 type="submit"
-                disabled={isSubmitting}
+                disabled={!verifyDisableCondition(errors,values)}
               >
                 Confirm
               </button>
