@@ -1,0 +1,1 @@
+export const inputs = ["cardholder name","card number","exp. date (mm/yy)","cvc"]
